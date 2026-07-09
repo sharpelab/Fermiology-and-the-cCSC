@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="panel_a" data-name="panel a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137.58 88.81">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #7fcc06;
+      }
+
+      .cls-2 {
+        stroke: #7fcc06;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-9 {
+        fill: #4f8903;
+      }
+
+      .cls-10, .cls-8 {
+        fill: #69a805;
+      }
+
+      .cls-11, .cls-6, .cls-12 {
+        fill: #231f20;
+      }
+
+      .cls-3 {
+        stroke: #4f8903;
+      }
+
+      .cls-4, .cls-5, .cls-6 {
+        stroke: #231f20;
+      }
+
+      .cls-5 {
+        fill: #6d6e71;
+      }
+
+      .cls-7 {
+        fill: #1c75bc;
+        stroke: #2b3990;
+      }
+
+      .cls-13 {
+        fill: #fff;
+      }
+
+      .cls-13, .cls-12 {
+        font-family: ArialMT, Arial;
+        font-size: 8px;
+      }
+
+      .cls-8 {
+        stroke: #69a805;
+      }
+    </style>
+  </defs>
+  <rect class="cls-7" x="16.3" y="12.04" width="87.48" height="17.66" rx="8.83" ry="8.83"/>
+  <rect class="cls-5" x="16.3" y=".5" width="87.48" height="11.54" rx="5.77" ry="5.77"/>
+  <g>
+    <circle class="cls-9" cx="18.86" cy="53.53" r="2.56"/>
+    <circle class="cls-9" cx="25.72" cy="53.53" r="2.56"/>
+    <circle class="cls-9" cx="39.45" cy="53.53" r="2.56"/>
+    <circle class="cls-9" cx="46.31" cy="53.53" r="2.56"/>
+    <circle class="cls-9" cx="60.04" cy="53.53" r="2.56"/>
+    <circle class="cls-9" cx="66.9" cy="53.53" r="2.56"/>
+    <circle class="cls-9" cx="80.63" cy="53.53" r="2.56"/>
+    <circle class="cls-9" cx="87.5" cy="53.53" r="2.56"/>
+    <line class="cls-3" x1="18.86" y1="53.53" x2="87.5" y2="53.53"/>
+  </g>
+  <g>
+    <circle class="cls-9" cx="18.86" cy="35.34" r="2.56"/>
+    <circle class="cls-9" cx="25.72" cy="35.34" r="2.56"/>
+    <circle class="cls-9" cx="39.45" cy="35.34" r="2.56"/>
+    <circle class="cls-9" cx="46.31" cy="35.34" r="2.56"/>
+    <circle class="cls-9" cx="60.04" cy="35.34" r="2.56"/>
+    <circle class="cls-9" cx="66.9" cy="35.34" r="2.56"/>
+    <circle class="cls-9" cx="80.63" cy="35.34" r="2.56"/>
+    <circle class="cls-9" cx="87.5" cy="35.34" r="2.56"/>
+    <line class="cls-3" x1="18.86" y1="35.34" x2="87.5" y2="35.34"/>
+  </g>
+  <g>
+    <circle class="cls-10" cx="25.72" cy="47.47" r="2.56"/>
+    <circle class="cls-10" cx="32.59" cy="47.47" r="2.56"/>
+    <circle class="cls-10" cx="46.31" cy="47.47" r="2.56"/>
+    <circle class="cls-10" cx="53.18" cy="47.47" r="2.56"/>
+    <circle class="cls-10" cx="66.9" cy="47.47" r="2.56"/>
+    <circle class="cls-10" cx="73.77" cy="47.47" r="2.56"/>
+    <circle class="cls-10" cx="87.5" cy="47.47" r="2.56"/>
+    <circle class="cls-10" cx="94.36" cy="47.47" r="2.56"/>
+    <line class="cls-8" x1="25.72" y1="47.47" x2="94.36" y2="47.47"/>
+  </g>
+  <g>
+    <circle class="cls-1" cx="32.59" cy="41.4" r="2.56"/>
+    <circle class="cls-1" cx="39.45" cy="41.4" r="2.56"/>
+    <circle class="cls-1" cx="53.18" cy="41.4" r="2.56"/>
+    <circle class="cls-1" cx="60.04" cy="41.4" r="2.56"/>
+    <circle class="cls-1" cx="73.77" cy="41.4" r="2.56"/>
+    <circle class="cls-1" cx="80.63" cy="41.4" r="2.56"/>
+    <circle class="cls-1" cx="94.36" cy="41.4" r="2.56"/>
+    <circle class="cls-1" cx="101.22" cy="41.4" r="2.56"/>
+    <line class="cls-2" x1="32.59" y1="41.4" x2="101.22" y2="41.4"/>
+  </g>
+  <text class="cls-13" transform="translate(44.7 8.02)"><tspan x="0" y="0">Graphite</tspan></text>
+  <text class="cls-13" transform="translate(52.26 23.03)"><tspan x="0" y="0">hBN</tspan></text>
+  <rect class="cls-7" x="16.3" y="59.11" width="87.48" height="17.66" rx="8.83" ry="8.83"/>
+  <text class="cls-13" transform="translate(52.26 70.09)"><tspan x="0" y="0">hBN</tspan></text>
+  <text class="cls-12" transform="translate(127.06 71.15)"><tspan x="0" y="0">V</tspan></text>
+  <text class="cls-12" transform="translate(132.39 73.82) scale(.58)"><tspan x="0" y="0">bg</tspan></text>
+  <text class="cls-12" transform="translate(127.71 23.03)"><tspan x="0" y="0">V</tspan></text>
+  <text class="cls-12" transform="translate(133.04 25.69) scale(.58)"><tspan x="0" y="0">tg</tspan></text>
+  <text class="cls-12" transform="translate(0 45.59)"><tspan x="0" y="0">D</tspan></text>
+  <rect class="cls-5" x="16.3" y="76.77" width="87.48" height="11.54" rx="5.77" ry="5.77"/>
+  <rect class="cls-5" x="16.3" y="76.77" width="87.48" height="11.54" rx="5.77" ry="5.77"/>
+  <text class="cls-13" transform="translate(44.7 84.29)"><tspan x="0" y="0">Graphite</tspan></text>
+  <polyline class="cls-4" points="117.2 19.72 117.2 6.27 103.78 6.27"/>
+  <line class="cls-4" x1="110.44" y1="19.67" x2="123.83" y2="19.67"/>
+  <line class="cls-4" x1="112.28" y1="21.76" x2="121.99" y2="21.76"/>
+  <polyline class="cls-4" points="130.56 49.77 130.56 41.4 111.76 41.4"/>
+  <line class="cls-4" x1="123.79" y1="49.72" x2="137.18" y2="49.72"/>
+  <line class="cls-4" x1="125.63" y1="51.81" x2="135.34" y2="51.81"/>
+  <line class="cls-4" x1="126.94" y1="53.86" x2="134.03" y2="53.86"/>
+  <polyline class="cls-4" points="117.2 69.09 117.2 82.54 103.78 82.54"/>
+  <line class="cls-4" x1="110.44" y1="69.14" x2="123.83" y2="69.14"/>
+  <line class="cls-4" x1="112.28" y1="67.04" x2="121.99" y2="67.04"/>
+  <line class="cls-4" x1="117.2" y1="66.73" x2="117.2" y2="21.76"/>
+  <circle class="cls-6" cx="111.76" cy="41.4" r=".99"/>
+  <g>
+    <line class="cls-4" x1="10.56" y1="29.7" x2="10.56" y2="55.58"/>
+    <polygon class="cls-11" points="10.56 59.11 8.52 54.13 10.56 55.31 12.59 54.13 10.56 59.11"/>
+  </g>
+</svg>

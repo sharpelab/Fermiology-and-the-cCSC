@@ -1,0 +1,36 @@
+# Python dependencies for the CSC fermiology figure notebooks.
+# Tested with Python 3.12. The raw-sweep loader (`sweep`) is vendored under
+# utils/sweep/ and needs NO external lab package.
+#
+#   python -m venv .venv && source .venv/bin/activate   (or: uv venv)
+#   pip install -r requirements.txt                     (or: uv pip install -r requirements.txt)
+
+# --- core (used across most figures) ---
+numpy
+scipy
+matplotlib
+pandas
+h5py
+lmfit
+scikit-learn
+cycler
+
+# --- colormaps ---
+cmasher
+cmcrameri
+
+# --- vector/raster rendering (fig1 device panel, ed-fig-optical) ---
+Pillow
+svglib
+reportlab
+
+# --- figure-specific ---
+numba          # si-fig-onsager-model
+ipywidgets     # ed-fig-optical (interactive image cropping)
+
+# --- ed-fig-optical AFM panel only ---
+# pspylib is a small lab utility for reading Park-AFM .tiff stacks. It is not
+# bundled; obtain it separately (or read the .tiff scans with `tifffile`).
+
+# Note: utils/utils.py has an optional fetch_influxdb() helper that lazily
+# imports influxdb_client. It is unrelated to the figures and is not required.

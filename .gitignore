@@ -216,3 +216,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# --- CSC figure repo ---
+# Data is deposited in the Stanford Digital Repository, not tracked in git.
+data/

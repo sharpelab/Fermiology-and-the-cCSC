@@ -1,0 +1,32 @@
+{
+  "limits": {
+    "_note": "Gate limits extracted from leakage test",
+    "vbg": [-8.5, 7],
+    "vtg": [-6.5, 6.5],
+    "ep": 3
+  },
+  "default": {
+    "_note": "Values extracted from refined fitting of data",
+    "dbg": 25.5,
+    "dtg": 17.406,
+    "ep": 3
+  },
+  "older_fit": {
+    "_note": "Values extracted from initial fitting of data",
+    "dbg": 25.266,
+    "dtg": 17.15,
+    "ep": 3
+  },
+  "fft_fit": {
+    "_note": "Values extracted quarter metal fit of FFT data",
+    "dbg": 25.9,
+    "dtg": 17.674504922712416,
+    "ep": 3
+  },
+  "experimental": {
+    "_note": "Values extracted from inital fit and used throughout data acquisition",
+    "dbg": 25.5,
+    "dtg": 17.25,
+    "ep": 3
+  }
+}
