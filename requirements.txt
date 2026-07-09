@@ -23,6 +23,11 @@ cmcrameri
 Pillow
 svglib
 reportlab
+rlPyCairo      # renderPM backend used by fig1 to rasterize R4GDevice.svg
+freetype-py    # text->path conversion for the SVG render
+# rlPyCairo needs pycairo, which is sdist-only and requires the system Cairo
+# dev library to build:  sudo apt install libcairo2-dev pkg-config
+# (Alternatively use the OS pycairo, or swap this panel to cairosvg.)
 
 # --- figure-specific ---
 numba          # si-fig-onsager-model
