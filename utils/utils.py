@@ -940,6 +940,8 @@ def fetch_influxdb(file_number, measurement, metric, unit=None,
 # rc-param presets live in external JSON so they are the single source of truth,
 # shared by every notebook (no per-notebook inline copies).
 _RC_DIR = os.path.dirname(os.path.abspath(__file__))
+# Repo root (utils/ sits at <root>/utils) — home of the shared figs/ scratch dir.
+_REPO_ROOT = os.path.dirname(_RC_DIR)
 
 
 def _load_rc_params(name):
@@ -962,14 +964,19 @@ def update_rc_params(style='paper'):
 
 
 def save_fig(fig, name, formats=('pdf', 'png'), dpi=600, transparent=False,
-             pad_inches=0.02, dirpath='figs'):
-    """Save `fig` into `dirpath/` with the repo-standard settings
-    (dpi=600, bbox_inches='tight', pad_inches=0.02, transparent=False).
+             pad_inches=0.02, dirpath=None):
+    """Save `fig` into the shared repo-root figs/ scratch dir with the
+    repo-standard settings (dpi=600, bbox_inches='tight', pad_inches=0.02,
+    transparent=False).
 
-    `dirpath` is created if missing and is git-ignored, so outputs never get
+    By default (`dirpath=None`) figures land in <repo root>/figs/ regardless of
+    which notebook folder is the working directory; pass `dirpath` to override.
+    The dir is created if missing and is git-ignored, so outputs never get
     committed. If `name` carries an extension ('fig1.pdf'), only that format is
     written; otherwise every format in `formats` (PDF + PNG by default) is
     written. Returns the list of output paths."""
+    if dirpath is None:
+        dirpath = os.path.join(_REPO_ROOT, 'figs')
     os.makedirs(dirpath, exist_ok=True)
     base, ext = os.path.splitext(name)
     exts = [ext.lstrip('.')] if ext else list(formats)

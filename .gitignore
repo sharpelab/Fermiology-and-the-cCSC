@@ -220,5 +220,5 @@ __marimo__/
 # --- CSC figure repo ---
 # Data is deposited in the Stanford Digital Repository, not tracked in git.
 data/
-# Saved figure outputs (write via utils.save_fig); regenerate from notebooks.
+# Shared figure-output scratch dir at repo root (write via utils.save_fig).
 figs/
