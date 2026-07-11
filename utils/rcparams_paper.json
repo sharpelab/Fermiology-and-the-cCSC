@@ -1,0 +1,28 @@
+{
+    "font.family": "sans-serif",
+    "axes.labelsize": 8,
+    "axes.titlesize": 8,
+    "font.size": 9,
+    "legend.title_fontsize": 7,
+    "legend.fontsize": 7,
+    "xtick.labelsize": 7,
+    "ytick.labelsize": 7,
+
+    "xtick.direction": "in",
+    "xtick.top": true,
+    "ytick.direction": "in",
+    "ytick.right": true,
+
+    "xtick.major.size": 2.8,
+    "xtick.major.width": 0.84,
+    "xtick.minor.size": 1.4,
+    "xtick.minor.width": 0.84,
+
+    "ytick.major.size": 2.8,
+    "ytick.major.width": 0.84,
+    "ytick.minor.size": 1.4,
+    "ytick.minor.width": 0.84,
+
+    "axes.linewidth": 0.84,
+    "lines.linewidth": 1.4
+}

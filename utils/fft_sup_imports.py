@@ -1,5 +1,6 @@
 import os
 import sys
+import json
 
 # `sweep` is vendored under utils/sweep (a read-only subset of the lab
 # `measureme` package); no external lab dependency is required.
@@ -36,45 +37,32 @@ Rq = h/e**2
 from matplotlib.gridspec import GridSpecFromSubplotSpec
 file_path = '../data/raw_sweeps' # raw sweep data (download from SDR; see README)
 
-scale = 0.56
-
 norm_lf_delRxx = colors.SymLogNorm(linthresh=1, vmin=-1e3, vmax=1E3)
 norm_psd = colors.LogNorm(vmin=5e-5, vmax=3e2) # In units of Ohms^2 technically
 
 
-def update_rc_params():
-    plt.rcParams.update({
-        # Font and font sizes
-        'font.family': 'sans-serif',
-        'axes.labelsize': 8, 
-        'axes.titlesize': 8,
-        'font.size': 9,
-        'legend.title_fontsize': 7,
-        'legend.fontsize': 7,
-        'xtick.labelsize': 7,
-        'ytick.labelsize': 7,
-
-        # Ticks
-        'xtick.direction': 'in',
-        'xtick.top': 'True',
-        'ytick.direction': 'in',
-        'ytick.right': 'True',
-
-        'xtick.major.size': 5*scale,
-        'xtick.major.width': 1.5*scale,
-        'xtick.minor.size': 2.5*scale,
-        'xtick.minor.width': 1.5*scale,
-
-        'ytick.major.size': 5*scale,
-        'ytick.major.width': 1.5*scale,
-        'ytick.minor.size': 2.5*scale,
-        'ytick.minor.width': 1.5*scale,
+# rc-param presets live in external JSON so they are the single source of truth,
+# shared by every notebook (no per-notebook inline copies).
+_RC_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
-        # Linewidths
-        'axes.linewidth': 1.5*scale,
-        'lines.linewidth': 2.5*scale,
-    })
+def _load_rc_params(name):
+    with open(os.path.join(_RC_DIR, name)) as f:
+        return json.load(f)
+
+
+def update_rc_params(style='paper'):
+    """Apply an rc-param preset to matplotlib.
+
+    style : {'paper', 'talk'}
+        'paper' — small fonts / scaled ticks for multipanel print figures.
+        'talk'  — larger fonts, full-size ticks, no forced white frame; for
+                  single-panel and diagnostic/presentation plots.
+
+    Presets live in utils/rcparams_<style>.json (single source of truth)."""
+    if style not in ('paper', 'talk'):
+        raise ValueError("style must be 'paper' or 'talk', got %r" % (style,))
+    plt.rcParams.update(_load_rc_params('rcparams_%s.json' % style))
 
 
 contact_colors = {
