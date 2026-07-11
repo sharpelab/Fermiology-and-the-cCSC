@@ -961,17 +961,22 @@ def update_rc_params(style='paper'):
     plt.rcParams.update(_load_rc_params('rcparams_%s.json' % style))
 
 
-def save_fig(fig, name, dpi=600, transparent=False, pad_inches=0.02, dirpath='figs'):
+def save_fig(fig, name, formats=('pdf', 'png'), dpi=600, transparent=False,
+             pad_inches=0.02, dirpath='figs'):
     """Save `fig` into `dirpath/` with the repo-standard settings
     (dpi=600, bbox_inches='tight', pad_inches=0.02, transparent=False).
 
     `dirpath` is created if missing and is git-ignored, so outputs never get
-    committed. `name` may carry an extension ('fig1.pdf', 'fig1.png') or omit it
-    (a PDF is written). Returns the output path."""
+    committed. If `name` carries an extension ('fig1.pdf'), only that format is
+    written; otherwise every format in `formats` (PDF + PNG by default) is
+    written. Returns the list of output paths."""
     os.makedirs(dirpath, exist_ok=True)
-    if not os.path.splitext(name)[1]:
-        name += '.pdf'
-    path = os.path.join(dirpath, name)
-    fig.savefig(path, dpi=dpi, bbox_inches='tight', pad_inches=pad_inches,
-                transparent=transparent)
-    return path
+    base, ext = os.path.splitext(name)
+    exts = [ext.lstrip('.')] if ext else list(formats)
+    paths = []
+    for e in exts:
+        path = os.path.join(dirpath, base + '.' + e)
+        fig.savefig(path, dpi=dpi, bbox_inches='tight', pad_inches=pad_inches,
+                    transparent=transparent)
+        paths.append(path)
+    return paths
