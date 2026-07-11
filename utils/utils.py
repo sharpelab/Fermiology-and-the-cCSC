@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 
 import numpy as np
 import scipy
+import matplotlib.pyplot as plt
 from scipy.signal import find_peaks, savgol_filter, butter, sosfiltfilt
 from itertools import product
 from typing import Dict, List, Tuple
@@ -934,3 +935,43 @@ def fetch_influxdb(file_number, measurement, metric, unit=None,
             values.append(record.get_value())
 
     return np.array(times), np.array(values)
+
+
+# rc-param presets live in external JSON so they are the single source of truth,
+# shared by every notebook (no per-notebook inline copies).
+_RC_DIR = os.path.dirname(os.path.abspath(__file__))
+
+
+def _load_rc_params(name):
+    with open(os.path.join(_RC_DIR, name)) as f:
+        return json.load(f)
+
+
+def update_rc_params(style='paper'):
+    """Apply an rc-param preset to matplotlib.
+
+    style : {'paper', 'talk'}
+        'paper' — small fonts / scaled ticks for multipanel print figures.
+        'talk'  — larger fonts, full-size ticks, no forced white frame; for
+                  single-panel and diagnostic/presentation plots.
+
+    Presets live in utils/rcparams_<style>.json (single source of truth)."""
+    if style not in ('paper', 'talk'):
+        raise ValueError("style must be 'paper' or 'talk', got %r" % (style,))
+    plt.rcParams.update(_load_rc_params('rcparams_%s.json' % style))
+
+
+def save_fig(fig, name, dpi=600, transparent=False, pad_inches=0.02, dirpath='figs'):
+    """Save `fig` into `dirpath/` with the repo-standard settings
+    (dpi=600, bbox_inches='tight', pad_inches=0.02, transparent=False).
+
+    `dirpath` is created if missing and is git-ignored, so outputs never get
+    committed. `name` may carry an extension ('fig1.pdf', 'fig1.png') or omit it
+    (a PDF is written). Returns the output path."""
+    os.makedirs(dirpath, exist_ok=True)
+    if not os.path.splitext(name)[1]:
+        name += '.pdf'
+    path = os.path.join(dirpath, name)
+    fig.savefig(path, dpi=dpi, bbox_inches='tight', pad_inches=pad_inches,
+                transparent=transparent)
+    return path

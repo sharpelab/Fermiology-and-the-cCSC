@@ -1,6 +1,5 @@
 import os
 import sys
-import json
 
 # `sweep` is vendored under utils/sweep (a read-only subset of the lab
 # `measureme` package); no external lab dependency is required.
@@ -41,28 +40,7 @@ norm_lf_delRxx = colors.SymLogNorm(linthresh=1, vmin=-1e3, vmax=1E3)
 norm_psd = colors.LogNorm(vmin=5e-5, vmax=3e2) # In units of Ohms^2 technically
 
 
-# rc-param presets live in external JSON so they are the single source of truth,
-# shared by every notebook (no per-notebook inline copies).
-_RC_DIR = os.path.dirname(os.path.abspath(__file__))
-
-
-def _load_rc_params(name):
-    with open(os.path.join(_RC_DIR, name)) as f:
-        return json.load(f)
-
-
-def update_rc_params(style='paper'):
-    """Apply an rc-param preset to matplotlib.
-
-    style : {'paper', 'talk'}
-        'paper' — small fonts / scaled ticks for multipanel print figures.
-        'talk'  — larger fonts, full-size ticks, no forced white frame; for
-                  single-panel and diagnostic/presentation plots.
-
-    Presets live in utils/rcparams_<style>.json (single source of truth)."""
-    if style not in ('paper', 'talk'):
-        raise ValueError("style must be 'paper' or 'talk', got %r" % (style,))
-    plt.rcParams.update(_load_rc_params('rcparams_%s.json' % style))
+# update_rc_params / save_fig now live in utils.py (imported via the * above).
 
 
 contact_colors = {
