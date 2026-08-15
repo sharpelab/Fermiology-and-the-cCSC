@@ -1,39 +1,60 @@
 # Python dependencies for the CSC fermiology figure notebooks.
-# Tested with Python 3.12. The raw-sweep loader (`sweep`) is vendored under
+# Tested with Python 3.12.3. The raw-sweep loader (`sweep`) is vendored under
 # utils/sweep/ and needs NO external lab package.
 #
 #   python -m venv .venv && source .venv/bin/activate   (or: uv venv)
 #   pip install -r requirements.txt                     (or: uv pip install -r requirements.txt)
+#
+# Versions are pinned deliberately. Two reasons:
+#
+#   1. Numerics. These notebooks were written against NumPy 1.x; NumPy 2.0
+#      removed implicit shape-(1,) -> scalar assignment, which broke three of
+#      the SI figure notebooks outright.
+#   2. Rendering. matplotlib 3.10.8 reproduces the published figures exactly
+#      (pixel-identical). matplotlib 3.11.0 renders the same data differently --
+#      measured at ~1.9% of pixels on si-fig16-fft-hightone-filters. If you
+#      upgrade matplotlib, expect the regenerated PDFs to differ cosmetically
+#      from the ones in the paper.
+#
+# If you only want to read the code, none of this matters. If you want to
+# reproduce the figures, use these versions.
 
 # --- core (used across most figures) ---
-numpy
-scipy
-matplotlib
-pandas
-h5py
-lmfit
-scikit-learn
-cycler
+# Pinned to the environment that regenerates the published figures
+# pixel-identically.
+numpy==2.4.1
+scipy==1.17.0
+matplotlib==3.10.8
+pandas==2.3.3
+h5py==3.15.1
+lmfit==1.3.4
+scikit-learn==1.9.0
+cycler==0.12.1
 
 # --- colormaps ---
-cmasher
-cmcrameri
+cmasher==1.9.2
+cmcrameri==1.9          # see note below: version not figure-verified
 
-# --- vector/raster rendering (fig1 device panel, ed-fig-optical) ---
-Pillow
-svglib
-reportlab
-rlPyCairo      # renderPM backend used by fig1 to rasterize R4GDevice.svg
-freetype-py    # text->path conversion for the SVG render
+# --- vector/raster rendering (fig1 device panel, ed-fig01-optical) ---
+Pillow==12.1.0
+svglib==2.0.2           # not figure-verified
+reportlab==5.0.0        # not figure-verified
+rlPyCairo==0.4.0        # renderPM backend used by fig1 to rasterize R4GDevice.svg
+freetype-py==2.5.1      # text->path conversion for the SVG render
 # rlPyCairo needs pycairo, which is sdist-only and requires the system Cairo
 # dev library to build:  sudo apt install libcairo2-dev pkg-config
 # (Alternatively use the OS pycairo, or swap this panel to cairosvg.)
 
 # --- figure-specific ---
-numba          # si-fig-onsager-model
-ipywidgets     # ed-fig-optical (interactive image cropping)
+numba==0.66.0           # ed-fig10-onsager-model; not figure-verified
+ipywidgets==8.1.8       # ed-fig01-optical (interactive image cropping)
 
-# --- ed-fig-optical AFM panel only ---
+# Pins marked "not figure-verified" come from a working environment but were not
+# checked against the published PDFs, because the figures that use them (fig1,
+# ed-fig01-optical, ed-fig10-onsager-model) were not regenerated during the pin.
+# The core block above was verified.
+
+# --- ed-fig01-optical AFM panel only ---
 # pspylib is a small lab utility for reading Park-AFM .tiff stacks. It is not
 # bundled; obtain it separately (or read the .tiff scans with `tifffile`).
 

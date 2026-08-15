@@ -13,7 +13,7 @@ that figure from the deposited data.
 fig1/ … fig4/            main-text figures
 ed-fig-*/                Extended Data figures
 si-fig-*/                Supplementary figures
-fig-theory-LL-qo-fts/    theory Landau-level QO supplement
+si-fig21-25-theory-LL-qo-fits/    theory Landau-level QO supplement
 utils/                   shared library
   utils.py               analysis + plotting helpers (FFTs, detrending, Onsager/Streda)
   Lf_analysis.py         low-field SdH analysis class
@@ -22,7 +22,8 @@ utils/                   shared library
 rmg19.json               device gate-calibration constants
 requirements.txt
 data/                    NOT in git — download from the Stanford Digital
-                         Repository (see "Data" below) and unzip here
+                         Repository, doi.org/10.25740/pp266vn3552
+                         (see "Data" below) and unzip here
 ```
 
 Every notebook begins with a one-line bootstrap that puts `utils/` on the path:
@@ -37,8 +38,15 @@ so notebooks are meant to be run **from within their own figure folder**.
 ## Data
 
 The code is published without data. The full dataset is deposited in the
-**Stanford Digital Repository** (DOI: _TBD_). Download the archive and unpack it
-so the repository contains a top-level `data/` directory:
+**Stanford Digital Repository**:
+
+> *Data for: Fermiology and the Candidate Chiral Superconductor in Rhombohedral
+> Tetralayer Graphene*, Version 1.0, Stanford Digital Repository (2026).
+> <https://doi.org/10.25740/pp266vn3552>
+
+This is the same DOI cited in the Data availability and Code availability
+statements of the paper. Download the archive and unpack it so the repository
+contains a top-level `data/` directory:
 
 ```
 data/
@@ -60,7 +68,7 @@ uv venv                       # or: python -m venv .venv
 source .venv/bin/activate
 uv pip install -r requirements.txt
 
-# The ed-fig-optical AFM panel additionally needs `pspylib` (a lab .tiff
+# The ed-fig01-optical AFM panel additionally needs `pspylib` (a lab .tiff
 # reader), which is not bundled; obtain it separately or read the scans with
 # `tifffile`.
 ```
@@ -75,3 +83,17 @@ cells.
   dependency on the lab acquisition stack. It depends only on `numpy`.
 - `rmg19.json` holds the device gate-calibration constants used to convert
   gate voltages to carrier density `n` and displacement field `D`.
+
+## Citation and license
+
+If you use this code, please cite the paper and the data deposit:
+
+> S. S. Kalantre *et al.*, *Fermiology and the Candidate Chiral Superconductor in
+> Rhombohedral Tetralayer Graphene*.
+>
+> Data: Stanford Digital Repository, <https://doi.org/10.25740/pp266vn3552>
+
+The code in this repository is released under the MIT License (see `LICENSE`).
+The dataset is distributed separately through the Stanford Digital Repository
+under whatever terms that deposit specifies; the MIT License here covers the
+analysis and figure-generation code only.

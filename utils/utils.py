@@ -215,6 +215,26 @@ def interp_rxx(B, Rxx, nx=400, type="cubic"):
     return invBvec, Rxx_interp
 
 
+def interp_rxx_B(B, Rxx, nx=400, type="cubic"):
+    """
+    Interpolate Rxx onto an evenly-spaced B grid (NOT 1/B).
+
+    Use this when checking for oscillations periodic in B itself rather than
+    in 1/B (e.g. Aharonov–Bohm-like or apparent B-periodic artifacts).
+    """
+    order = np.argsort(B)
+    B_sorted = B[order]
+    Rxx_sorted = Rxx[order, ...]
+
+    Bvec = np.linspace(B_sorted[0], B_sorted[-1], nx)
+    if type == "cubic":
+        cs = scipy.interpolate.CubicSpline(B_sorted, Rxx_sorted, axis=0)
+        Rxx_interp = cs(Bvec)
+    elif type == "linear":
+        Rxx_interp = np.interp(Bvec, B_sorted, Rxx_sorted)
+    return Bvec, Rxx_interp
+
+
 def make_vec_fft(invB, Rxx, n, padding=0, normalize=True, return_complex=False):
     """
     Compute FFT of Rxx in 1/B space.

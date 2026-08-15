@@ -1,0 +1,9 @@
+file,temperature_K,source
+1804,0.03244471454449165,influxdb:AVS_bridge/P1_MixingCh_low
+1805,0.053,floor override (T_fridge > T_mc)
+1806,0.1660849416108488,influxdb:AVS_bridge/P1_MixingCh_low
+1807,0.28365354667262344,influxdb:AVS_bridge/P1_MixingCh_low
+1808,0.42405321637141746,influxdb:AVS_bridge/P1_MixingCh_low
+1809,0.536089631087014,influxdb:AVS_bridge/P1_MixingCh_low
+1810,0.6651103446279889,influxdb:AVS_bridge/P1_MixingCh_low
+1822,0.1141106597800733,"data[""T_probe""]"
