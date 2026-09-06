@@ -102,6 +102,10 @@ for ine in [20]: #ne takes 51 values uniformed spaced from 0.1 to 1.0 in units o
     "../data/hartree-fock/multi_flavor_HF/HF_IVC_set1_nonscreened_U0.052_epsr30.npz"
   """
   
+  # NOTE: the published SI figures use the epsr20 files:
+  #   SI Fig. 39 (u_D = 52 meV, eps = 20): ..._U0.052_epsr20.npz
+  #   SI Fig. 40 (u_D = 44 meV, eps = 20): ..._U0.044_epsr20.npz
+  # The epsr30 default below is as received and is not shown in the SI.
   pd_plot['fname']="../data/hartree-fock/multi_flavor_HF/HF_IVC_set1_nonscreened_U0.052_epsr30.npz"
   pd_plot['ine']=ine 
 
