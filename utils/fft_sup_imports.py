@@ -14,6 +14,7 @@ from matplotlib.colors import Normalize
 import matplotlib.image as mpimg
 
 from matplotlib import cm
+import matplotlib.patheffects as pe   
 from matplotlib.gridspec import GridSpec
 from matplotlib.ticker import LogLocator, SymmetricalLogLocator, FormatStrFormatter
 import matplotlib.patches as mpatches
