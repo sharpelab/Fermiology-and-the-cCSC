@@ -222,3 +222,4 @@ __marimo__/
 data/
 # Shared figure-output scratch dir at repo root (write via utils.save_fig).
 figs/
+.DS_Store
