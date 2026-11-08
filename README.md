@@ -13,6 +13,7 @@ that figure from the deposited data.
 fig1/ … fig4/            main-text figures
 ed-fig-*/                Extended Data figures
 si-fig-*/                Supplementary figures
+ref-response-*/          figures added in the referee response (now Extended Data / SI)
 si-fig21-25-theory-LL-qo-fits/    theory Landau-level QO supplement
 si-fig27-40-*-HF-*/      self-consistent Hartree-Fock supplement (plain .py
                          scripts, one folder per SI figure or figure range)
